@@ -50,6 +50,7 @@ body {
 header {
     width: 100%;
     height: 120px;
+    background-color: white;
     padding: 0 60px;
     box-sizing: border-box;
     position: fixed;
@@ -498,4 +499,279 @@ section.about .inner ul li:nth-child(2) {
 section.about .inner ul li:nth-child(3) {
     animation: slid-up2;
     animation-duration: 3s;
+}
+
+/*premium*/
+section.premium {
+    width: 95%;
+    /*상하 40px 좌우는 중앙 위치*/
+    margin: 40px auto;
+    /*패딩이 컨탠츠 안으로 들어가도록 설정*/
+    padding: 100px;
+    box-sizing: border-box;
+    height: 1020px;
+    background: url("../img/con2_bg.jpg") no-repeat center/cover;
+    position: relative;
+}
+
+section.premium .txtImg {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    /*이미지는 span으로 묶었음*/
+    display: block;
+    /*애니메이션 주기 위함*/
+    width: 100%;
+    /*오잉???*/
+    overflow: hidden;
+    animation: widthAni 1.5s;
+}
+
+/*사진이 왼쪽부터 로딩*/
+@keyframes widthAni {
+    0% {
+        width: 0;
+    }
+
+    30% {
+        width: 0;
+    }
+}
+
+section.premium .title {
+    position: absolute;
+    left: 8%;
+    top: 35%;
+}
+
+section.premium .title h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+section.premium .title p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+section.premium .title a {
+    font-size: 24px;
+    display: block;
+    /*호버를 주기 위함*/
+    position: relative;
+}
+
+section.premium .title a:before {
+    content: '';
+    width: 80px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.08);
+    position: absolute;
+    bottom: 0;
+    /*부드럽게 함*/
+    transition: all 0.3s;
+}
+
+section.premium .title a:hover:before,
+section.premium .title a:focus:before {
+    width: 0;
+}
+
+section.premium .banner li {
+    position: absolute;
+    box-shadow: 5px 6px 15px rgba(3, 3, 3, 0.4);
+    width: 15px;
+}
+
+/*section.premium .banner li img {*/
+/*    width: 100%;*/
+/*}*/
+
+section.premium .banner li:nth-child(1) {
+    left: 45%;
+    top: 15%;
+    animation: slid-up 1.2s;
+}
+
+section.premium .banner li:nth-child(2) {
+    left: 37%;
+    top: 50%;
+    animation: slid-up 1.8s;
+}
+
+section.premium .banner li:nth-child(3) {
+    left: 55%;
+    top: 62%;
+    animation: slid-up 2.2s;
+}
+
+section.premium .banner li:nth-child(4) {
+    right: 2%;
+    width: 32%;
+    max-width: 580px;
+    animation: slid-up 2.5s;
+}
+
+/*global*/
+section.global {
+    width: 95%;
+    margin: 40px auto;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+section.global:before {
+    content: '';
+    width: 100%;
+    height: 45%;
+    background-color: #eee;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+section.global h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+section.global p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+}
+
+section.global ul {
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+section.global ul li {
+    float: left;
+    width: 25%;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
+section.global ul li:nth-child(1),
+section.global ul li:nth-child(3) {
+    margin-top: -50px;
+}
+
+section.global ul li a {
+    display: block;
+}
+
+section.global ul li a img:after {
+    content: 'VIEW';
+    font-size: 22px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 35, 28, 0.8);
+    color: white;
+    padding-top: 200px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.2s;
+}
+
+section.global ul li a:hover img:after,
+section.global ul li a:focus img:after {
+    opacity: 1;
+}
+
+section.global ul li a:hover img,
+section.global ul li a:focus img {
+    /*왼쪽, 위로 이동*/
+    transform: translate(-8px, -8px);
+    box-shadow: 15px 18px 10px rgba(0, 0, 0, 0.35);
+}
+
+section.global ul li a img {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: all 0.2s;
+}
+
+section.global ul li a h3 {
+    font-size: 22px;
+    margin: 40px 0 15px;
+}
+
+section.global ul li a span {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    color: #888;
+}
+
+section.global ul li a p.content p  {
+    font-size: 17px;
+}
+
+section.global ul li:nth-child(1) {
+    animation: slid-up 1s;
+}
+
+section.global ul li:nth-child(2) {
+    animation: slid-up 1.4s;
+}
+
+
+section.global ul li:nth-child(3) {
+    animation: slid-up 1.8s;
+}
+
+section.global ul li:nth-child(4) {
+    animation: slid-up 2.2s;
+}
+
+footer {
+    padding-top: 80px;
+    text-align: center;
+}
+
+footer .sns li {
+    /*옆으로 정렬*/
+    display: inline-block;
+    margin-right: 30px;
+}
+
+footer .footerLogo {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -6px;
+    color: #39312b;
+    margin: 40px 0 20px;
+}
+
+footer ul li {
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+footer ul li .copyright {
+    font-size: 15px;
+    font-weight: 100;
+    display: block;
+    margin-top: 20px;
+    color: #888;
+}
+
+footer .box {
+    padding: 150px 0;
+    background: url("../img/bottom_bg.jpg") no-repeat center/cover;
+    margin-top: 80px;
+}
+
+footer .box h2 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+    animation: slid-up 1s;
 }
