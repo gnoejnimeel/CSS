@@ -522,14 +522,16 @@ section.premium .txtImg {
     display: block;
     /*애니메이션 주기 위함*/
     width: 100%;
-    /*오잉???*/
+    /*넘치는 부분을 가려주기 위함*/
     overflow: hidden;
+    /*시간에 따라 천천히 바꿈*/
     animation: widthAni 1.5s;
 }
 
 /*사진이 왼쪽부터 로딩*/
 @keyframes widthAni {
     0% {
+        /*박스폭 0*/
         width: 0;
     }
 
@@ -575,6 +577,7 @@ section.premium .title a:before {
 
 section.premium .title a:hover:before,
 section.premium .title a:focus:before {
+    /*80px -> 0px*/
     width: 0;
 }
 
@@ -731,6 +734,7 @@ section.global ul li:nth-child(4) {
     animation: slid-up 2.2s;
 }
 
+/*footer*/
 footer {
     padding-top: 80px;
     text-align: center;
@@ -747,6 +751,7 @@ footer .footerLogo {
     font-weight: 900;
     letter-spacing: -6px;
     color: #39312b;
+    /*위, 좌우, 아래*/
     margin: 40px 0 20px;
 }
 
