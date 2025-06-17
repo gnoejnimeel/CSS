@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns="http://www.w3.org/1999/html">
-<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
-<!--<link rel="stylesheet" type="text/css" th:href="@{/css/teacher.css}" />-->
 <head>
     <meta charset="UTF-8">
     <title>돕다</title>
-
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/conciergeMain.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}" />
+    <!--script-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/conciergeScript.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -25,20 +30,73 @@
             </nav>
         </header>
         <section class="visual">
-            <div class="img">
-                <img th:src="@{/img/main_visual.jpg}" alt="">
-                <span class="mask a"></span>
-                <span class="mask b"></span>
-                <span class="mask c"></span>
-                <span class="mask d"></span>
-            </div>
-            <div class="title">
-                <h2>For Your Business & Life</h2>
-                <p>
-                    돕다는 글로벌 컨시어지 서비스 그룹입니다.
-                    귀사와 귀하의 품격에 맞는 서비스를 제공합니다.
-                </p>
-            </div>
+            <!-- 슬라이드 -->
+            <ul class="slide">
+                <li>
+                    <div class="img">
+                        <span class="imgBox">
+                            <img th:src="@{/img/main_visual1.png}">
+                        </span>
+                        <span class="mask a"></span>
+                        <span class="mask b"></span>
+                        <span class="mask c"></span>
+                        <span class="mask d"></span>
+                        <span class="page">
+                            <img th:src="@{/img/1.png}" alt="01">
+                        </span>
+                    </div>
+                    <div class="title">
+                        <h2>For Your Business & Life</h2>
+                        <p>
+                            돕다는 글로벌 컨시어지 서비스 그룹입니다.
+                            귀사와 귀하의 품격에 맞는 서비스를 제공합니다.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <span class="imgBox">
+                            <img th:src="@{/img/main_visual2.png}">
+                        </span>
+                        <span class="mask a"></span>
+                        <span class="mask b"></span>
+                        <span class="mask c"></span>
+                        <span class="mask d"></span>
+                        <span class="page">
+                            <img th:src="@{/img/2.png}" alt="02">
+                        </span>
+                    </div>
+                    <div class="title" style="color: #39312b;">
+                        <h2>For Your Business & Life</h2>
+                        <p>
+                            돕다는 글로벌 컨시어지 서비스 그룹입니다.
+                            귀사와 귀하의 품격에 맞는 서비스를 제공합니다.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <span class="imgBox">
+                            <img th:src="@{/img/main_visual3.png}">
+                        </span>
+                        <span class="mask a"></span>
+                        <span class="mask b"></span>
+                        <span class="mask c"></span>
+                        <span class="mask d"></span>
+                        <span class="page">
+                            <img th:src="@{/img/3.png}" alt="03">
+                        </span>
+                    </div>
+                    <div class="title" style="color: #121424;">
+                        <h2>For Your Business & Life</h2>
+                        <p>
+                            돕다는 글로벌 컨시어지 서비스 그룹입니다.
+                            귀사와 귀하의 품격에 맞는 서비스를 제공합니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <!-- 공통 하단 메뉴 -->
             <div>
                 <ul class="menu">
                     <li>
@@ -79,7 +137,7 @@
         </section>
         <section class="about">
             <img th:src="@{/img/main2_bg.jpg}">
-            <div class="inner">
+            <div class="inner animate" data-animate="motion">
                 <h2>글로벌 컨시어지 서비스와 함께 하세요.</h2>
                 <div class="line">
                     <span></span>
@@ -124,7 +182,7 @@
             </div>
         </section>
         <section class="premium">
-            <span class="txtImg">
+            <span class="txtImg animate" data-animate="motion">
                 <img th:src="@{/img/pre_img.png}">
             </span>
             <div class="title">
@@ -136,21 +194,21 @@
                 </p>
             </div>
             <ul class="banner">
-                <li>
+                <li class="animate" data-animate="motion">
                     <img th:src="@{/img/banner1.jpg}">
                 </li>
-                <li>
+                <li class="animate" data-animate="motion">
                     <img th:src="@{/img/banner2.jpg}">
                 </li>
-                <li>
+                <li class="animate" data-animate="motion">
                     <img th:src="@{/img/banner3.jpg}">
                 </li>
-                <li>
+                <li class="animate" data-animate="motion">
                     <img th:src="@{/img/banner4.jpg}">
                 </li>
             </ul>
         </section>
-        <section class="global">
+        <section class="global animate" data-animate="motion">
             <div class="title">
                 <h2>Global Concierge Services</h2>
                 <p>
@@ -248,7 +306,7 @@
                     </span>
                 </li>
             </ul>
-            <div class="box">
+            <div class="box animate" data-animate="motion">
                 <h2>
                     전세계 어디든 나만의 컨시어지가 있다.<br>
                     For Your Business & Trip
@@ -256,6 +314,5 @@
             </div>
         </footer>
     </div>
-    <script th:href="@{/js/script.js}"></script>
 </body>
 </html>

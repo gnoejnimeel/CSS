@@ -50,7 +50,6 @@ body {
 header {
     width: 100%;
     height: 120px;
-    background-color: white;
     padding: 0 60px;
     box-sizing: border-box;
     position: fixed;
@@ -58,6 +57,10 @@ header {
     /*로고 센터를 위함*/
     line-height: 120px;
     z-index: 100;
+}
+
+header.on {
+    background: #ffffff;
 }
 
 header .logo {
@@ -134,7 +137,21 @@ section.visual .img {
     text-align: center;
     position: relative;
     /*넘치는 부분 숨기기*/
+    /*overflow: hidden;*/
+}
+
+section.visual .img .imgBox {
+    display: block;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+}
+
+section.visual .img .page {
+    position: absolute;
+    right: -43px;
+    top:50%;
+    transform: translateY(-50%);
 }
 
 section.visual .img img {
@@ -264,19 +281,19 @@ section.visual .img .mask.d {
     }
 }
 
-section.visual .img .mask.a {
+section.visual .slick-active .img .mask.a {
     animation: mask 0.4s;
 }
 
-section.visual .img .mask.b {
+section.visual .slick-active .img .mask.b {
     animation: mask 0.6s;
 }
 
-section.visual .img .mask.c {
+section.visual .slick-active .img .mask.c {
     animation: mask 0.8s;
 }
 
-section.visual .img .mask.d {
+section.visual .slick-active .img .mask.d {
     animation: mask 1s;
 }
 
@@ -293,11 +310,11 @@ section.visual .img .mask.d {
     }
 }
 
-section.visual .title h2{
+section.visual .slick-active .title h2{
     animation:slid-up 1.5s;
 }
 
-section.visual .title p {
+section.visual .slick-active .title p {
     animation-name:slid-up;
     animation-duration: 2.2s;
 }
@@ -307,10 +324,10 @@ section.visual .menu {
     animation-duration: 2.8s;
 }
 
-section.visual .img img {
+section.visual .slick-active .imgBox img {
     /*원래 크기*/
     transform: scale(1);
-    animation: scaleani 2s;
+    animation: scaleani 5.2s;
 }
 
 /*확대 애니메이션*/
@@ -323,6 +340,27 @@ section.visual .img img {
     30%{
         transform: scale(1.3);
     }
+}
+
+.slick-dots {
+    position: absolute;
+    right: 4.5%;
+    bottom: 30px;
+}
+
+.slick-dots li button {
+    text-indent: -9999px;
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border: none;
+    /*손모양*/
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #39132b;
 }
 
 /*about*/
@@ -407,7 +445,7 @@ section.about .inner .line li:before {
     animation: dot 1.5s infinite;
 }
 
-section.about .inner h2 {
+section.about .inner.motion h2 {
     animation: slid-up;
     animation-duration: 0.8s;
 }
@@ -452,22 +490,22 @@ section.about .inner ul li h3 {
 
 }
 
-section.about .inner .line span {
+section.about .inner.motion .line span {
     animation: opacity-ani;
     animation-duration: 0.8s;
 }
 
-section.about .inner .line li.a {
+section.about .inner.motion .line li.a {
     animation: opacity-ani;
     animation-duration: 1.2s;
 }
 
-section.about .inner .line li.b {
+section.about .inner.motion .line li.b {
     animation: opacity-ani;
     animation-duration: 1.6s;
 }
 
-section.about .inner .line li.c {
+section.about .inner.motion .line li.c {
     animation: opacity-ani;
     animation-duration: 2s;
 }
@@ -514,7 +552,7 @@ section.premium {
     position: relative;
 }
 
-section.premium .txtImg {
+section.premium .txtImg.motion {
     position: absolute;
     left: 0;
     top: 20%;
@@ -525,7 +563,7 @@ section.premium .txtImg {
     /*넘치는 부분을 가려주기 위함*/
     overflow: hidden;
     /*시간에 따라 천천히 바꿈*/
-    animation: widthAni 1.5s;
+    animation: widthAni 2.5s;
 }
 
 /*사진이 왼쪽부터 로딩*/
@@ -535,8 +573,12 @@ section.premium .txtImg {
         width: 0;
     }
 
-    30% {
+    40% {
         width: 0;
+    }
+
+    100% {
+        width: 100%;
     }
 }
 
@@ -591,25 +633,25 @@ section.premium .banner li {
 /*    width: 100%;*/
 /*}*/
 
-section.premium .banner li:nth-child(1) {
+section.premium .banner li:nth-child(1).motion {
     left: 45%;
     top: 15%;
     animation: slid-up 1.2s;
 }
 
-section.premium .banner li:nth-child(2) {
+section.premium .banner li:nth-child(2).motion {
     left: 37%;
     top: 50%;
     animation: slid-up 1.8s;
 }
 
-section.premium .banner li:nth-child(3) {
+section.premium .banner li:nth-child(3).motion {
     left: 55%;
     top: 62%;
     animation: slid-up 2.2s;
 }
 
-section.premium .banner li:nth-child(4) {
+section.premium .banner li:nth-child(4).motion {
     right: 2%;
     width: 32%;
     max-width: 580px;
@@ -713,24 +755,24 @@ section.global ul li a span {
     color: #888;
 }
 
-section.global ul li a p.content p  {
+section.global.motion ul li a p.content p  {
     font-size: 17px;
 }
 
-section.global ul li:nth-child(1) {
+section.global.motion ul li:nth-child(1) {
     animation: slid-up 1s;
 }
 
-section.global ul li:nth-child(2) {
+section.global.motion ul li:nth-child(2) {
     animation: slid-up 1.4s;
 }
 
 
-section.global ul li:nth-child(3) {
+section.global.motion ul li:nth-child(3) {
     animation: slid-up 1.8s;
 }
 
-section.global ul li:nth-child(4) {
+section.global.motion ul li:nth-child(4) {
     animation: slid-up 2.2s;
 }
 
@@ -774,7 +816,7 @@ footer .box {
     margin-top: 80px;
 }
 
-footer .box h2 {
+footer .box.motion h2 {
     color: #fff;
     font-size: 22px;
     font-weight: normal;

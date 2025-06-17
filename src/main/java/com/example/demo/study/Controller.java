@@ -9,8 +9,11 @@ public class Controller {
         return "study/main";
     }
 
+    /**
+     * 돕다 Basic
+     */
     @GetMapping("1")
     public String step1() {
-        return "study/1";
+        return "study/concierge";
     }
 }
