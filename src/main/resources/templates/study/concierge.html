@@ -2,10 +2,13 @@
 <html lang="ko" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=1.0">
     <title>돕다</title>
     <!--css-->
     <link rel="stylesheet" type="text/css" href="/css/conciergeMain.css" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}" />
+    <!--icon-->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <!--script-->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/scrolla.jquery.min.js"></script>
@@ -16,8 +19,15 @@
     <div class="wrap">
         <!-- header -->
         <header>
+            <span class ="bg"></span>
+            <a href="#" class="open">
+                <span class="lnr lnr-menu"></span>
+            </a>
             <a href="#" class="logo">Concierge.</a>
             <nav>
+                <a href="#" class="close">
+                    <span class="lnr lnr-cross"></span>
+                </a>
                 <ul class="gnb">
                     <li>
                         <a href="#">about</a>
@@ -48,7 +58,7 @@
                     <div class="title">
                         <h2>For Your Business & Life</h2>
                         <p>
-                            돕다는 글로벌 컨시어지 서비스 그룹입니다.
+                            돕다는 글로벌 컨시어지 서비스 그룹입니다.<br>
                             귀사와 귀하의 품격에 맞는 서비스를 제공합니다.
                         </p>
                     </div>
@@ -69,7 +79,7 @@
                     <div class="title" style="color: #39312b;">
                         <h2>For Your Business & Life</h2>
                         <p>
-                            돕다는 글로벌 컨시어지 서비스 그룹입니다.
+                            돕다는 글로벌 컨시어지 서비스 그룹입니다.<br>
                             귀사와 귀하의 품격에 맞는 서비스를 제공합니다.
                         </p>
                     </div>
@@ -88,9 +98,9 @@
                         </span>
                     </div>
                     <div class="title" style="color: #121424;">
-                        <h2>For Your Business & Life</h2>
+                        <h2>For Your Business & <br class="mo"> Life</h2>
                         <p>
-                            돕다는 글로벌 컨시어지 서비스 그룹입니다.
+                            돕다는 글로벌 컨시어지 서비스 그룹입니다.<br>
                             귀사와 귀하의 품격에 맞는 서비스를 제공합니다.
                         </p>
                     </div>
@@ -190,8 +200,8 @@
                 <p>
                     프리미엄 멤버십은 귀하만을 위한 컨시어지 서비스를 제공합니다.<br>
                     귀하에게 최고의 삶을 선물하세요.
-                    <a href="#">more</a>
                 </p>
+                <a href="#">more</a>
             </div>
             <ul class="banner">
                 <li class="animate" data-animate="motion">
@@ -230,7 +240,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <p class="content">
+                            <p class="img">
                                 <img th:src="@{/img/con3_bg1.jpg}">
                                 <h3>수행기사 서비스<span>Secretarial Services</span></h3>
                                 <p>

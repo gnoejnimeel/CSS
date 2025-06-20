@@ -45,6 +45,7 @@ body {
 .wrap {
     width: 100%;
     min-width: 1100px;
+    overflow: hidden;
 }
 
 header {
@@ -542,53 +543,40 @@ section.about .inner ul li:nth-child(3) {
 /*premium*/
 section.premium {
     width: 95%;
-    /*상하 40px 좌우는 중앙 위치*/
     margin: 40px auto;
-    /*패딩이 컨탠츠 안으로 들어가도록 설정*/
-    padding: 100px;
+    padding: 100px 0;
     box-sizing: border-box;
     height: 1020px;
-    background: url("../img/con2_bg.jpg") no-repeat center/cover;
+    background: url(../img/con2_bg.jpg)no-repeat center/cover;
     position: relative;
 }
 
-section.premium .txtImg.motion {
+section.premium .txtImg {
     position: absolute;
     left: 0;
-    top: 20%;
-    /*이미지는 span으로 묶었음*/
+    top:20%;
     display: block;
-    /*애니메이션 주기 위함*/
     width: 100%;
-    /*넘치는 부분을 가려주기 위함*/
     overflow: hidden;
-    /*시간에 따라 천천히 바꿈*/
-    animation: widthAni 2.5s;
 }
 
-/*사진이 왼쪽부터 로딩*/
-@keyframes widthAni {
-    0% {
-        /*박스폭 0*/
-        width: 0;
-    }
+section.premium .txtImg.motion {
+    animation-name: widthAni;
+    animation-duration: 2.5s;
+}
 
-    40% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
+@keyframes  widthAni {
+    0%{width:0%;}
+    40%{width:0%;}
+    100%{width:100%;}
 }
 
 section.premium .title {
     position: absolute;
-    left: 8%;
-    top: 35%;
+    left:8%; top:35%;
 }
 
-section.premium .title h2 {
+section.premium .title h2{
     font-size: 30px;
     margin-bottom: 20px;
 }
@@ -599,10 +587,9 @@ section.premium .title p {
     margin-bottom: 30px;
 }
 
-section.premium .title a {
+section.premium .title a{
     font-size: 24px;
-    display: block;
-    /*호버를 주기 위함*/
+    display: inline-block;
     position: relative;
 }
 
@@ -610,52 +597,55 @@ section.premium .title a:before {
     content: '';
     width: 80px;
     height: 15px;
-    background-color: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.08);
     position: absolute;
     bottom: 0;
-    /*부드럽게 함*/
     transition: all 0.3s;
 }
 
 section.premium .title a:hover:before,
 section.premium .title a:focus:before {
-    /*80px -> 0px*/
     width: 0;
 }
 
+/*foucs는 tab키로 이동해서 요소가 선택되거나, 마우스가 이벤트상태일 때 */
 section.premium .banner li {
     position: absolute;
     box-shadow: 5px 6px 15px rgba(3, 3, 3, 0.4);
-    width: 15px;
+    width: 15%;
 }
 
-/*section.premium .banner li img {*/
-/*    width: 100%;*/
-/*}*/
+section.premium .banner li img {
+    width: 100%;
+}
 
 section.premium .banner li:nth-child(1).motion {
     left: 45%;
-    top: 15%;
-    animation: slid-up 1.2s;
+    top:15%;
+    animation-name:slid-up;
+    animation-duration: 1.2s;
 }
 
 section.premium .banner li:nth-child(2).motion {
     left: 37%;
-    top: 50%;
-    animation: slid-up 1.8s;
+    top:50%;
+    animation-name:slid-up;
+    animation-duration: 1.8s;
 }
 
 section.premium .banner li:nth-child(3).motion {
     left: 55%;
-    top: 62%;
-    animation: slid-up 2.2s;
+    top:62%;
+    animation-name:slid-up;
+    animation-duration: 2.2s;
 }
 
 section.premium .banner li:nth-child(4).motion {
     right: 2%;
     width: 32%;
     max-width: 580px;
-    animation: slid-up 2.5s;
+    animation-name:slid-up;
+    animation-duration: 1.5s;
 }
 
 /*global*/
@@ -743,6 +733,11 @@ section.global ul li a img {
     transition: all 0.2s;
 }
 
+section.global ul li a .img img {
+    width: 100%;
+}
+
+
 section.global ul li a h3 {
     font-size: 22px;
     margin: 40px 0 15px;
@@ -821,4 +816,300 @@ footer .box.motion h2 {
     font-size: 22px;
     font-weight: normal;
     animation: slid-up 1s;
+}
+
+/*모바일용 햄버거바*/
+header .open {
+    display: none;
+}
+
+header .close {
+    display: none;
+}
+
+/*모바일용 줄바꿈*/
+br .mo {
+    display: none;
+}
+
+/*모바일 네비 추가*/
+header .open {display: none;}
+header .close {display: none;}
+
+/*모바일용 줄바꿈*/
+br.mo {display: none;}
+
+/*반응형 시작*/
+/*테블릿모드 : 1100px이하~ 951px*/
+@media screen and (max-width:1100px){
+    .wrap {min-width: 100%;
+    }
+
+    /*header*/
+    header {
+        height: 60px;
+        line-height: 60px;
+        padding:0 10px;
+    }
+
+    header .open {
+        display: block;
+        float: right;
+        font-size: 32px;
+        height: 60px;
+        padding-top: 5px;
+        box-sizing: border-box;
+    }
+
+    header .bg {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.6);
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0; z-index: 200; display: none;}
+    header .logo {font-size: 30px; letter-spacing: -4px;}
+    header nav{background: #fff; width: 0; height: 100vh; position: absolute; right: 0; top:0; overflow: hidden; transition: width 0.3s; z-index:300; }
+    header nav.on {width: 70%; max-width: 300px; }
+    header nav .close {display: block; position: absolute; right: 10px; top:0; font-size: 35px; padding-top: 5px; box-sizing: border-box;}
+    header nav .gnb {margin-top: 100px;}
+    header nav .gnb li {display: block; width: 100%; margin:0; line-height: 60px;}
+    header nav .gnb li a {width: 100%; padding-left: 30px; box-sizing: border-box;font-size:20px; }
+    header nav .gnb li a:after {display: none;}
+
+    /*visual*/
+    section.visual {margin-top: 60px;}
+    section.visual .img img {height: 100%; width: auto;}
+    section.visual .title {left: 5%;}
+    section.visual .menu {width: 100%; left: 5%;}
+    section.visual .menu li {margin-right: 30px;}
+    section.visual .menu li a p {font-size: 17px;}
+    .slick-dots {right: 2.5%;}
+
+    /*about*/
+    section.about {width: 100%; height: 600px;}
+    section.about img{height: 100%; width: auto;}
+    section.about .inner .line {width: 40%;}
+    section.about .inner ul {width: 80%;}
+    section.about .inner ul li {width: 50%;}
+    section.about .inner ul li:nth-child(3){margin-left: 25%;}
+
+    /*premium*/
+    section.premium {width: 100%; height:800px;}
+    section.premium .title {left: 5%;}
+    section.premium .txtImg{left: 5px;}
+
+    /*global*/
+    section.global {width: 100%;}
+    section.global ul li {padding: 10px;}
+    section.global ul li a p {font-size: 15px;}
+    section.global ul li a .img:after {display: none;}
+}
+
+/*950px ~ 751px */
+@media screen and (max-width: 950px) {
+    section.visual .menu {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    section.visual .img {
+        width: 92%;
+    }
+
+    section.about {
+        height: 480px;
+    }
+
+    section.about .inner .line {
+        width: 60%;
+    }
+
+    section.about .inner ul {
+        width: 95%;
+    }
+
+    section.about .inner ul li {
+        width: 33.3333%;
+        font-size: 12px;
+    }
+
+    section.about .inner ul li:nth-child(3) {
+        margin-left: 0;
+    }
+
+    section.premium .title {
+        width: 100%;
+        left: 0;
+        top:20px;
+        text-align: center;
+    }
+
+    section.premium .txtImg {
+        height: 60px;
+        left: 20px;
+        top:28%;
+    }
+
+    section.premium .txtImg img {
+        height: 100%;
+    }
+
+    section.premium .banner {
+        position:relative;
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        top:30%;
+        height: 500px;
+    }
+
+    section.premium .banner li:nth-child(1).motion {
+        left: 15%;
+        width: 22%;
+    }
+
+    section.premium .banner li:nth-child(2).motion {left: 8%; width: 22%;}
+    section.premium .banner li:nth-child(3).motion {left: 38%; width: 22%;}
+    section.premium .banner li:nth-child(4).motion {left: 50%; width: 48%;}
+
+    section.premium .title h2 {
+        font-size: 20px;
+    }
+
+    section.premium .title p {
+        font-size: 13px;
+    }
+
+    section.global .title h2 {
+        font-size: 20px;
+    }
+
+    section.global .title p {
+        font-size: 13px;
+    }
+
+    section.global ul {
+        width: 95%;
+        margin-left: auto;
+    }
+
+    section.global ul li {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    section.global ul li a h3 {
+        font-size: 16px;
+    }
+
+    section.global ul li a span {
+        font-size: 12px;
+    }
+
+    section.global .title p {
+        font-size: 10px;
+    }
+
+    section.global ul li a h3 {
+        margin: 20px 0 10px;
+    }
+
+    section.global:before {
+        height: 48%;
+    }
+
+    footer {
+        padding-top: 50px;
+    }
+
+    footer .sns li:last-child {
+        margin-right: 0;
+    }
+
+    footer .footerLogo {
+        letter-spacing: -4px;
+        font-size: 28px;
+    }
+
+    footer ul li, footer ul li .copyright {
+        font-size: 13px;
+    }
+
+    footer .box {
+        padding: 80px 0;
+    }
+
+    footer .box.motion h2{
+        font-size: 17px;
+    }
+
+}
+
+/* 750px 이하 - 모바일 디바이스 체크 */
+@media screen and (max-width:750px){
+    /*visual*/
+    section.visual {height: 80vh; overflow: hidden;}
+    section.visual .img {width: 87%;}
+    section.visual .img img {height: 80vh; width:auto;}
+    section.visual .img .page img {width: 75%; height: auto;margin-left: 8%;}
+    br.mo {display: block;}
+    section.visual .title h2{font-size: 29px;}
+    section.visual .title p{font-size: 14px;}
+    .slick-dots{right: 20px;}
+
+    /*about*/
+    section.about .inner.motion h2 {font-size: 20px; margin-bottom: 10px;}
+    section.about .inner .line {display: none;}
+    section.about .inner ul li {width: 100%;margin: 20px 0 0;font-size: 13px;}
+    section.about .inner ul li h3 {font-size: 16px; margin-bottom: 8px;}
+
+    /*premium*/
+    section.premium {height: 685px;}
+    section.premium .title h2{font-size: 20px;}
+    section.premium .title p {font-size: 13px; margin-bottom: 20px;}
+    section.premium .title a {font-size: 18px;}
+    section.premium .title a:before {width: 60px;height: 12px;}
+    section.premium .txtImg {left: 0; height: 32px; text-align: center;}
+    section.premium .banner {height: 400px; width: 100%;}
+    section.premium .banner li:nth-child(1).motion {left: 10%;}
+    section.premium .banner li:nth-child(2).motion {left: 5%;}
+    section.premium .banner li:nth-child(3).motion {left: 42%;}
+    section.premium .banner li:nth-child(4).motion {left: 44%;top: -5%;}
+}
+/* 320px 이하  - 280px  체크 - 개발자도구에서 갤럭시 폴드 기종 추가 */
+@media screen and (max-width:320px){
+    section.visual .title h2 {font-size: 22px;}
+    section.visual .title p {font-size: 11px;}
+    section.visual .img .page img {width: 55%; margin-left: 15%;}
+    .slick-dots li button {height: 8px;margin-bottom: 15px;}
+
+    /*about*/
+    section.about {height: 480px;}
+    section.about .inner.motion h2 {font-size: 16px;}
+    section.about .inner ul li h3 {font-size: 14px;}
+    section.about .inner ul li {font-size: 11px;}
+
+    /*premium*/
+    section.premium {height: 600px;}
+    section.premium h2 {font-size: 16px;}
+    section.premium p {font-size: 11px;}
+    section.premium .banner {height: 350px;}
+    section.premium .txtImg.motion {top:33%;}
+    section.premium .banner {top:38%;}
+    section.premium .banner li:nth-child(1).motion {width: 25%;}
+    section.premium .banner li:nth-child(2).motion {width: 25%;}
+    section.premium .banner li:nth-child(3).motion {width: 25%;}
+
+    /*global*/
+    section.global .title h2{font-size: 16px;}
+    section.global .title p {font-size: 11px;}
+    section.global ul li a h3 {font-size: 13px; }
+
+    /*footer*/
+    footer ul li {font-size: 10px;}
+    footer .box  {padding: 50px 0;}
+    footer .box.motion h2 {font-size: 14px;}
 }
